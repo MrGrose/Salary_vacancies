@@ -25,7 +25,7 @@ def main():
         print()
         print(draw_table(sj_statistic, "SuperJob Moscow"))
     except Exception as e:
-       raise e
+        print(f"Произошла ошибка: {e}")
 
 
 if __name__ == '__main__':

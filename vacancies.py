@@ -33,10 +33,8 @@ def fetch_vacancies(url, headers=None, params=None, page=0, pages_number=1):
 def get_vacancies_hh(languages):
     url = "https://api.hh.ru/vacancies"
     town_id = 1
-    period = 30
     params = {
         "area": town_id,
-        "period": period,
         "search_field": "name",
     }
     vacancies = {}

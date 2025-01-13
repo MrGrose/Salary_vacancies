@@ -14,18 +14,13 @@ def main():
         return
     parser = create_parser()
     parsed_args = parser.parse_args()
-    try:
-        hh_vacancies = get_vacancies_hh(parsed_args.l)
-        hh_statistic = get_vacancies_statistic(hh_vacancies, predict_rub_salary_hh)
-        
-        sj_vacancies = get_vacancy_superjob(parsed_args.l, superjob_key)
-        sj_statistic = get_vacancies_statistic(sj_vacancies, predict_rub_salary_sj)
-        
-        print(draw_table(hh_statistic, "HeadHunter Moscow"))
-        print()
-        print(draw_table(sj_statistic, "SuperJob Moscow"))
-    except Exception as e:
-        print(f"Произошла ошибка: {e}")
+    hh_vacancies = get_vacancies_hh(parsed_args.l)
+    hh_statistic = get_vacancies_statistic(hh_vacancies, predict_rub_salary_hh)
+    sj_vacancies = get_vacancy_superjob(parsed_args.l, superjob_key)
+    sj_statistic = get_vacancies_statistic(sj_vacancies, predict_rub_salary_sj)
+    print(draw_table(hh_statistic, "HeadHunter Moscow"))
+    print()
+    print(draw_table(sj_statistic, "SuperJob Moscow"))
 
 
 if __name__ == '__main__':

@@ -33,9 +33,9 @@ def predict_rub_salary_hh(vacancy):
 
 def get_vacancies_statistic(vacancies, predict_rub_salary_func):
     vacancies_statistic = {}
-    for language, data in vacancies.items():
-        vacancies_count = data.get("count")
-        vacancies_items = data.get("items")
+    for language, vacancies_info in vacancies.items():
+        vacancies_count = vacancies_info.get("count")
+        vacancies_items = vacancies_info.get("items")
         salaries = []
         for vacancy in vacancies_items:
             salary = predict_rub_salary_func(vacancy)
